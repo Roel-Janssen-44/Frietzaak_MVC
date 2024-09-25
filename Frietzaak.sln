@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35309.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frietzaak.Server", "Frietzaak.Server\Frietzaak.Server.csproj", "{2956DC9C-01BE-4570-82FE-B2761BB91643}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "frietzaak.client", "frietzaak.client\frietzaak.client.esproj", "{1FDF8D0B-8815-4D37-A4C0-A9EA16903311}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2956DC9C-01BE-4570-82FE-B2761BB91643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2956DC9C-01BE-4570-82FE-B2761BB91643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2956DC9C-01BE-4570-82FE-B2761BB91643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2956DC9C-01BE-4570-82FE-B2761BB91643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FDF8D0B-8815-4D37-A4C0-A9EA16903311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FDF8D0B-8815-4D37-A4C0-A9EA16903311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FDF8D0B-8815-4D37-A4C0-A9EA16903311}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1FDF8D0B-8815-4D37-A4C0-A9EA16903311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FDF8D0B-8815-4D37-A4C0-A9EA16903311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FDF8D0B-8815-4D37-A4C0-A9EA16903311}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED5ADE7E-6B08-48EF-87BB-296D6F15B363}
+	EndGlobalSection
+EndGlobal
