@@ -115,10 +115,7 @@ export default function ProductView() {
       <Link className="mb-10 block" to={"/dashboard/owner/products"}>
         {`<-`} Terug
       </Link>
-      <img
-        src={`/src/public/${product?.image}.jpeg`}
-        className="rounded mb-4"
-      />
+      <img src={`/${product?.image}.jpeg`} className="rounded mb-4" />
       <label className="inline-block w-[150px]" htmlFor="pet-select">
         Categorie:
       </label>

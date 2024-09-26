@@ -18,7 +18,7 @@ export default function ProductCard({ product }: { product: Product }) {
       className="block w-56 h-auto p-2 group rounded text-center"
     >
       <img
-        src={`/src/public/${product.image}.jpeg`}
+        src={`/${product.image}.jpeg`}
         alt={product.name}
         className="w-full rounded mb-4"
       />
