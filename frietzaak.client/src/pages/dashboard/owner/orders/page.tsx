@@ -1,22 +1,35 @@
 import PageTitle from "../../../../components/PageTitle";
-import { orders } from "../../../../data";
 import CompletedOrders from "../../../../components/CompletedOrders";
 import OrdersToMake from "../../../../components/OrdersToMake";
+import { Order } from "../../../../types";
+import { useEffect, useState } from "react";
 
 export default function Owner() {
-  const ordersToMake = orders.filter((order) => order.Status === "open");
-  const completedOrders = orders.filter((order) => order.Status === "closed");
+  const [orders, setOrders] = useState<Order[] | null>(null);
+
+  useEffect(() => {
+    fetch(`https://localhost:7006/orders`)
+      .then((response) => response.json())
+      .then((data) => setOrders(data));
+  }, []);
+
+  const ordersToMake = orders?.filter((order) => order.completed === false);
+  const completedOrders = orders?.filter((order) => order.completed == true);
 
   return (
     <>
       <PageTitle color="primary" title="Te maken bestellingen" />
-      <OrdersToMake orders={ordersToMake} />
+      {orders !== null && ordersToMake !== undefined && (
+        <OrdersToMake orders={ordersToMake} />
+      )}
       <PageTitle
         color="primary"
         title="Gemaakte bestellingen"
         className="mt-10"
       />
-      <CompletedOrders orders={completedOrders} />
+      {orders !== null && completedOrders !== undefined && (
+        <CompletedOrders orders={completedOrders} />
+      )}
     </>
   );
 }

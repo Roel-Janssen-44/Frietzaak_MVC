@@ -15,6 +15,8 @@ import CustomerOrder from "./pages/dashboard/customer/order/[id]/page.tsx";
 import OwnerProducts from "./pages/dashboard/owner/products/page.tsx";
 import OwnerProduct from "./pages/dashboard/owner/products/[id]/page.tsx";
 import OwnerCreateProduct from "./pages/dashboard/owner/products/create/page.tsx";
+import Order from "./pages/order/[id]/page.tsx";
+import OrderConfirmation from "./pages/order/[id]/confirmation/page.tsx";
 
 const RootLayout = () => {
   return (
@@ -49,6 +51,14 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
+        path: "/order/:id",
+        element: <Order />,
+      },
+      {
+        path: "/order/:id/confirmation",
+        element: <OrderConfirmation />,
+      },
+      {
         path: "/dashboard/customer",
         element: <Customer />,
       },
@@ -81,7 +91,5 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
+  <RouterProvider router={router} />
 );

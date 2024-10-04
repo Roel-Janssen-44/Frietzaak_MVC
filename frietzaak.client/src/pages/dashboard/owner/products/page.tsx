@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import PageTitle from "../../../../components/PageTitle";
 import { Product, Category } from "../../../../types";
 import ProductCard from "../../../../components/ProductCard";
+import Button from "../../../../components/Button";
 
 export default function Products() {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -64,6 +65,15 @@ export default function Products() {
           </div>
         </div>
       ))}
+      <div className="mt-10 mb-10 w-40">
+        <Button
+          priority="secondary"
+          className="text-center"
+          link="/dashboard/owner/products/create"
+        >
+          Product maken
+        </Button>
+      </div>
     </>
   );
 }

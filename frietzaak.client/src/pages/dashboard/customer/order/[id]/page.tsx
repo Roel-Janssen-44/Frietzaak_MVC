@@ -1,9 +1,22 @@
 import PageTitle from "../../../../../components/PageTitle";
 import { Link } from "react-router-dom";
-import { order } from "../../../../../data";
 import OrderSummary from "../../../../../components/OrderSummary";
+import { Order } from "../../../../../types";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 export default function ViewOrder() {
+  const [order, setOrder] = useState<Order | null>(null);
+
+  const params = useParams();
+  const orderId = params.id;
+
+  useEffect(() => {
+    fetch(`https://localhost:7006/order/${orderId}`)
+      .then((response) => response.json())
+      .then((data) => setOrder(data));
+  }, []);
+
   return (
     <>
       <Link to={"/dashboard/customer"} className="mb-4 block">
@@ -15,7 +28,7 @@ export default function ViewOrder() {
           Bestelnummer: <span className="text-secondary text-4xl">#12345</span>
         </h2>
       </div>
-      <OrderSummary order={order} />
+      {order && <OrderSummary order={order} />}
     </>
   );
 }

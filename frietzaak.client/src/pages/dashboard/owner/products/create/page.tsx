@@ -5,8 +5,10 @@ import { Product } from ".../../../src/types";
 import Button from "../../../../../components/Button";
 import { convertToCurrency } from "../../../../../functions";
 import PageTitle from "../../../../../components/PageTitle";
+import { useNavigate } from "react-router-dom";
 
 export default function CreateProduct() {
+  const navigate = useNavigate();
   const [product, setProduct] = useState({
     id: 0,
     name: "Test product 4",
@@ -36,6 +38,7 @@ export default function CreateProduct() {
           image: "",
           category: "",
         });
+        navigate("/dashboard/owner/products");
       } else {
         console.error("Failed to create product");
       }
@@ -69,10 +72,7 @@ export default function CreateProduct() {
   return (
     <div>
       <PageTitle color="primary" title="Product maken" />
-      <img
-        src={`/src/public/${product?.image}.jpeg`}
-        className="rounded mb-4"
-      />
+      <img src={`/${product?.image}.jpg`} className="rounded mb-4" />
       <label className="inline-block w-[150px]" htmlFor="pet-select">
         Categorie:
       </label>

@@ -19,5 +19,12 @@ namespace Frietzaak.Server.Models
 
         [Required]
         public ICollection<OrderLine>? OrderLines { get; set; }
+
+        [AllowNull]
+        public int? CustomerId { get; set; }
+
+        [AllowNull]
+        public virtual Customer? Customer { get; set; }
+
     }
 }

@@ -1,13 +1,13 @@
 "use client";
 
 import OrderCard from "./OrderCard";
-import { Order } from "@/app/lib/types";
+import { Order } from "../types";
 
 export default function CompletedOrders({ orders }: { orders: Order[] }) {
   return (
     <div className="flex flex-row flex-wrap gap-12">
-      {orders.map((order) => (
-        <OrderCard key={order.Id} order={order} />
+      {orders?.map((order) => (
+        <OrderCard key={order.id} order={order} />
       ))}
     </div>
   );

@@ -15,10 +15,6 @@ namespace Frietzaak.Server.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
 
         [HttpGet]
         [Route("/products")]

@@ -2,31 +2,32 @@ import { Category, Order, Product } from "./types";
 
 export const order: Order = {
   id: 1,
-  number: 1,
   status: "open",
   orderLines: [
     {
       id: 1,
+      productId: 1,
       product: {
         id: 1,
         name: "Kleine friet",
         price: 2.5,
         discountPrice: 2,
-        image: "friet.jpeg",
+        image: "friet.jpg",
         category: "",
       },
-      quantity: 1,
+      amount: 1,
     },
     {
       id: 2,
+      productId: 2,
       product: {
         id: 2,
         name: "Frikandel",
         price: 2.5,
-        image: "friet.jpeg",
+        image: "friet.jpg",
         category: "",
       },
-      quantity: 2,
+      amount: 2,
     },
   ],
 };
@@ -34,121 +35,128 @@ export const order: Order = {
 export const orders: Order[] = [
   {
     id: 1,
-    number: 1,
     status: "open",
     orderLines: [
       {
         id: 1,
+        productId: 1,
         product: {
           id: 1,
           name: "Kleine friet",
           price: 2.5,
           discountPrice: 2,
-          image: "friet.jpeg",
+          image: "friet.jpg",
           category: "",
         },
-        quantity: 1,
+        amount: 1,
       },
       {
         id: 2,
+        productId: 2,
         product: {
           id: 2,
           name: "Frikandel",
           price: 2.5,
-          image: "friet.jpeg",
+          image: "friet.jpg",
           category: "",
         },
-        quantity: 2,
+        amount: 2,
       },
     ],
   },
   {
     id: 2,
-    number: 2,
     status: "open",
     orderLines: [
       {
         id: 1,
+        productId: 1,
         product: {
           id: 1,
           name: "Kleine friet",
           price: 2.5,
           discountPrice: 2,
-          image: "friet.jpeg",
+          image: "friet.jpg",
           category: "",
         },
-        quantity: 1,
+        amount: 1,
       },
       {
         id: 2,
+        productId: 2,
         product: {
           id: 2,
           name: "Frikandel",
           price: 2.5,
-          image: "friet.jpeg",
+          image: "friet.jpg",
           category: "",
         },
-        quantity: 2,
+        amount: 2,
       },
     ],
   },
   {
     id: 3,
-    number: 3,
     status: "closed",
     orderLines: [
       {
         id: 1,
+        productId: 1,
+
         product: {
           id: 1,
           name: "Kleine friet",
           price: 2.5,
           discountPrice: 2,
-          image: "friet.jpeg",
+          image: "friet.jpg",
           category: "",
         },
-        quantity: 1,
+        amount: 1,
       },
       {
         id: 2,
+        productId: 2,
         product: {
           id: 2,
           name: "Frikandel",
           price: 2.5,
-          image: "friet.jpeg",
+          image: "friet.jpg",
           category: "",
         },
-        quantity: 2,
+        amount: 2,
       },
     ],
   },
   {
     id: 4,
-    number: 4,
     status: "closed",
     orderLines: [
       {
         id: 1,
+        productId: 1,
+
         product: {
           id: 1,
           name: "Kleine friet",
           price: 2.5,
           discountPrice: 2,
-          image: "friet.jpeg",
+          image: "friet.jpg",
           category: "",
         },
-        quantity: 1,
+        amount: 1,
       },
       {
         id: 2,
+        productId: 2,
+
         product: {
           id: 2,
           name: "Frikandel",
           price: 2.5,
-          image: "friet.jpeg",
+          image: "friet.jpg",
           category: "",
         },
-        quantity: 2,
+        amount: 2,
       },
     ],
   },
@@ -159,26 +167,30 @@ export const orders: Order[] = [
     orderLines: [
       {
         id: 1,
+        productId: 1,
+
         product: {
           id: 1,
           name: "Kleine friet",
           price: 2.5,
           discountPrice: 2,
-          image: "friet.jpeg",
+          image: "friet.jpg",
           category: "",
         },
-        quantity: 1,
+        amount: 1,
       },
       {
         id: 2,
+        productId: 2,
+
         product: {
           id: 2,
           name: "Frikandel",
           price: 2.5,
-          image: "friet.jpeg",
+          image: "friet.jpg",
           category: "",
         },
-        quantity: 2,
+        amount: 2,
       },
     ],
   },
@@ -194,21 +206,21 @@ export const categories: Category[] = [
         name: "Kleine friet",
         price: 2.5,
         discountPrice: 2,
-        image: "/images/friet.jpeg",
+        image: "/images/friet.jpg",
         category: "",
       },
       {
         id: 22,
         name: "Middel friet",
         price: 2.5,
-        image: "/images/friet.jpeg",
+        image: "/images/friet.jpg",
         category: "",
       },
       {
         id: 23,
         name: "Grote friet",
         price: 2.5,
-        image: "/images/friet.jpeg",
+        image: "/images/friet.jpg",
         category: "",
       },
     ],

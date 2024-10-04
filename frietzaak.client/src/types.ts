@@ -1,14 +1,16 @@
 export type Order = {
   id: number;
-  number: number;
-  status: "open" | "closed";
+  dateTime: string;
+  estimatedCompletionTime: string;
+  completed: true | false;
   orderLines: OrderLine[];
 };
 
 export type OrderLine = {
   id: number;
   product: Product;
-  quantity: number;
+  amount: number;
+  productId: number;
 };
 
 export type Category = {

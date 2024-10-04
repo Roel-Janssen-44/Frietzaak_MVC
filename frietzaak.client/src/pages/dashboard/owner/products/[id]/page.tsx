@@ -2,14 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { Product } from "../../../../../types";
-import { categories } from "../../../../../data";
-import { findProductById } from "../../../../../functions";
 import Button from "../../../../../components/Button";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaRegTrashAlt } from "react-icons/fa";
 
 export default function ProductView() {
   const location = useLocation();
+  const navigate = useNavigate();
   const productId = location.pathname.split("/")[4];
 
   const [product, setProduct] = useState<Product | null>(null);
@@ -78,8 +77,7 @@ export default function ProductView() {
       });
 
       if (response.ok) {
-        // Todo - redirect to products page
-        alert("Product is aangepast");
+        navigate("/dashboard/owner/products");
       } else {
         console.error("Failed to create product");
       }
@@ -100,8 +98,7 @@ export default function ProductView() {
       });
 
       if (response.ok) {
-        // Todo - redirect to products page
-        alert("Product is verwijderd");
+        navigate("/dashboard/owner/products");
       } else {
         console.error("Failed to delete product");
       }
@@ -115,7 +112,7 @@ export default function ProductView() {
       <Link className="mb-10 block" to={"/dashboard/owner/products"}>
         {`<-`} Terug
       </Link>
-      <img src={`/${product?.image}.jpeg`} className="rounded mb-4" />
+      <img src={`/${product?.image}.jpg`} className="rounded mb-4" />
       <label className="inline-block w-[150px]" htmlFor="pet-select">
         Categorie:
       </label>

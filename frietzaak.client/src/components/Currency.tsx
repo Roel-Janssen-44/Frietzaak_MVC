@@ -8,7 +8,10 @@ export default function Currency({
   orderLine: OrderLine;
   className?: string;
 }) {
-  if (orderLine.product.discountPrice) {
+  if (
+    orderLine.product.discountPrice &&
+    orderLine.product.discountPrice < orderLine.product.price
+  ) {
     return (
       <div className={`text-lg font-title flex flex-row ${className}`}>
         <span className="text-secondary mr-2">

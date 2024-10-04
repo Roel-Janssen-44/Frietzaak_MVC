@@ -9,7 +9,8 @@ export default function ProductCard({ product }: { product: Product }) {
   const templateOrderLine: OrderLine = {
     id: 1,
     product: product,
-    quantity: 1,
+    amount: 1,
+    productId: product.id,
   };
 
   return (
@@ -18,7 +19,7 @@ export default function ProductCard({ product }: { product: Product }) {
       className="block w-56 h-auto p-2 group rounded text-center"
     >
       <img
-        src={`/${product.image}.jpeg`}
+        src={`/${product.image}.jpg`}
         alt={product.name}
         className="w-full rounded mb-4"
       />

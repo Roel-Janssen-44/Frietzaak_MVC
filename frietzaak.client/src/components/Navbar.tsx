@@ -17,14 +17,14 @@ export default function Navbar() {
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
-          {/* <li>
-            <NavLink to="/miel">Miel page</NavLink>
-          </li> */}
-          {!pathname.includes("dashboard/owner") && (
+          <li>
+            <NavLink to="/miel">(Miel page)</NavLink>
+          </li>
+          {/* {!pathname.includes("dashboard/owner") && (
             <li>
               <NavLink to="/contact">Contact</NavLink>
             </li>
-          )}
+          )} */}
           {pathname.includes("dashboard/owner") && (
             <>
               <li>

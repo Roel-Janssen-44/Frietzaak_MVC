@@ -4,6 +4,7 @@ using Frietzaak.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Frietzaak.Server.Migrations
 {
     [DbContext(typeof(ApplicationData))]
-    partial class ApplicationDataModelSnapshot : ModelSnapshot
+    [Migration("20240926102435_CustomersModel")]
+    partial class CustomersModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -144,11 +147,9 @@ namespace Frietzaak.Server.Migrations
 
             modelBuilder.Entity("Frietzaak.Server.Models.Order", b =>
                 {
-                    b.HasOne("Frietzaak.Server.Models.Customer", "Customer")
+                    b.HasOne("Frietzaak.Server.Models.Customer", null)
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId");
-
-                    b.Navigation("Customer");
                 });
 
             modelBuilder.Entity("Frietzaak.Server.Models.OrderLine", b =>

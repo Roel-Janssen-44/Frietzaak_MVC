@@ -46,22 +46,18 @@ export default function OrderTable({
     });
   };
 
-  const updateOrder = async () => {
+  const createOrder = async () => {
     try {
-      const response = await fetch(
-        `https://localhost:7006/update/order/${order.id}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(order),
-        }
-      );
-
+      const response = await fetch(`https://localhost:7006/create/order`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(order),
+      });
       if (response.ok) {
-        console.log("Order updated");
-        navigate(`/order/${order.id}/confirmation`);
+        const newOrderId = await response.json();
+        navigate(`/order/${newOrderId}/confirmation`);
       } else {
         console.error("Failed to update order");
       }
@@ -141,7 +137,7 @@ export default function OrderTable({
           Terug
         </Button>
         {/* <Button link={`/order/${order.id}/confirmation`} priority="secondary"> */}
-        <Button onClick={() => updateOrder()} priority="secondary">
+        <Button onClick={() => createOrder()} priority="secondary">
           Bestelling plaatsen
         </Button>
       </div>

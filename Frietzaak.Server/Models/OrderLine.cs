@@ -15,5 +15,7 @@ namespace Frietzaak.Server.Models
         
         [Required]
         public virtual Product? Product { get; set; }
+
+
     }
 }

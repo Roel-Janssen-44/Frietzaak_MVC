@@ -3,7 +3,7 @@ export default function Button({
   title,
   className,
 }: {
-  color: "primary" | "secondary" | "dark";
+  color: "primary" | "secondary" | "dark" | "white";
   title: string;
   className?: string;
 }) {
@@ -15,7 +15,9 @@ export default function Button({
                 ? "text-primary"
                 : color === "secondary"
                 ? "text-secondary"
-                : "text-dark"
+                : color === "dark"
+                ? "text-dark"
+                : "text-white"
             }
         `}
     >
